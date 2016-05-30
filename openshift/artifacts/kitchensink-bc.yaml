@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: kitchensink
+spec:
+  source:
+    type: Git
+    git:
+      uri: https://github.com/ulx-demo/kitchensink
+    sourceSecret:
+      name: git-secret
+  strategy:
+    type: Docker
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        name: jboss-eap64-openshift:latest
+        namespace: openshift
+  output:
+    to:
+      kind: ImageStreamTag
+      name: kitchensink:latest
+
