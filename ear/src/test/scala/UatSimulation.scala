@@ -4,7 +4,7 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import io.gatling.jdbc.Predef._
 
-class ComTestSimulation extends Simulation {
+class UatSimulation extends Simulation {
 
 	val httpProtocol = http
 		.baseURL("http://kitchensink-uat.apps.ose.ulx.hu")
