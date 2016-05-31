@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: kitchensink
-        image: kitchensink:1.0-com
+        image: kitchensink:1.0-uat
         ports:
         - containerPort: 8080
           protocol: TCP
@@ -30,7 +30,7 @@ spec:
       - kitchensink
       from:
         kind: ImageStreamTag
-        name: kitchensink:1.0-com
-        namespace: kitchensink
+        name: kitchensink:1.0-uat
+        namespace: kitchensink-dev
   - type: ConfigChange
 

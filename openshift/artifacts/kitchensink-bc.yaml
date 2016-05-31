@@ -7,15 +7,17 @@ spec:
     type: Git
     git:
       uri: https://github.com/ulx-demo/kitchensink
-    sourceSecret:
-      name: git-secret
   strategy:
-    type: Docker
-    dockerStrategy:
+    type: Source
+    sourceStrategy:
       from:
         kind: ImageStreamTag
         name: jboss-eap64-openshift:latest
         namespace: openshift
+      env:
+      - name: "ARTIFACT_DIR"
+        value: "ear/target/"
+
   output:
     to:
       kind: ImageStreamTag

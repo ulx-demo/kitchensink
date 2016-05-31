@@ -7,12 +7,12 @@ import io.gatling.jdbc.Predef._
 class ComTestSimulation extends Simulation {
 
 	val httpProtocol = http
-		.baseURL("http://kitchensink.apps.com.lin.eir.hu")
+		.baseURL("http://kitchensink-uat.apps.ose.ulx.hu")
 		.inferHtmlResources()
 
 
 
-    val uri1 = "http://kitchensink.apps.com.lin.eir.hu"
+    val uri1 = "http://kitchensink-uat.apps.ose.ulx.hu"
 
 	val scn = scenario("IntTestSimulation")
 		.exec(http("request_0")
@@ -20,7 +20,7 @@ class ComTestSimulation extends Simulation {
 		.pause(1)
 		.exec(http("request_1")
 			.get("/index.jsf")
-                        .check(substring("com-test-fail").notExists))
+                        .check(substring("uat-fail").notExists))
 		.pause(20)
 		.exec(http("request_2")
 			.post("/index.jsf")

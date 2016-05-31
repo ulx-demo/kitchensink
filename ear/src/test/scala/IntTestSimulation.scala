@@ -7,12 +7,12 @@ import io.gatling.jdbc.Predef._
 class IntTestSimulation extends Simulation {
 
 	val httpProtocol = http
-		.baseURL("http://kitchensink.apps.int.lin.eir.hu")
+		.baseURL("http://kitchensink-dev.apps.ose.ulx.hu")
 		.inferHtmlResources()
 
 
 
-    val uri1 = "http://kitchensink.apps.int.lin.eir.hu"
+    val uri1 = "http://kitchensink-dev.apps.ose.ulx.hu"
 
 	val scn = scenario("IntTestSimulation")
 		.exec(http("request_0")
