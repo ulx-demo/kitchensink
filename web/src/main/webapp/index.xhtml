@@ -23,7 +23,7 @@
    <ui:define name="content">
       <h1>Welcome to JBoss!</h1>
       <p><small>
-        <strong>Sikeres legyen-e a teszt az INT környezetben:</strong> igen (int-test-nofail)<br/>
+        <strong>Sikeres legyen-e a teszt az INT környezetben:</strong> ne (int-test-fail)<br/>
         <strong>Sikeres legyen-e a teszt az UAT környezetben:</strong> ne (uat-fail)<br/>
       </small></p>
 
@@ -50,7 +50,6 @@
 
          <p>
             <h:panelGrid columns="2">
-               <h:commandButton id="register" action="#{memberController.register}" value="Register" styleClass="register"/>
                <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
                            globalOnly="true"/>
             </h:panelGrid>
